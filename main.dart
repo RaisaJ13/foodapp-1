@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/screens/welcome_screen.dart';
 import 'package:untitled1/splash.dart';
-//import 'package:untitled1/screens/splashscreen.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
@@ -21,9 +20,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      //home: const WelcomeScreen(),
-      home : Splash(),
-      //home: const MySplashScreen(),
+     // home: const WelcomeScreen(),
+      //home : const welcome_screen(),
+       home: const Splash(),
 
     );
   }
