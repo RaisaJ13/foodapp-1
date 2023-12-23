@@ -5,7 +5,7 @@ class applogo extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return Image.asset("assets/images/");
+    return Image.asset("assets/images/Checkers.png");
     /*return Image.asset("image/Checkers.png");*/
   }
 }
