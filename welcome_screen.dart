@@ -1,85 +1,73 @@
 import 'package:flutter/material.dart';
-import 'package:untitled1/screens/signin_screen.dart';
-import 'package:untitled1/screens/signup_screen.dart';
-import 'package:untitled1/theme/theme.dart';
+import 'package:untitled1/screens/user.dart';
+import 'package:untitled1/screens/restaurant.dart';
+import 'package:untitled1/screens/applogo.dart';
 import 'package:untitled1/widgets/custom_scaffold.dart';
-import 'package:untitled1/widgets/welcome_button.dart';
 
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
 
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Flexible(
-            flex: 8,
-            child: Container(
-
-              padding: const EdgeInsets.symmetric(
-                vertical: 0,
-                horizontal: 40.0,
-              ),
-              child: Center(
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: const TextSpan(
-                    children: [
-                    //Image.asset(image: "image/Checkers.png");
-                      TextSpan(
-                        text: 'CHECKERS\n',
-                        style: TextStyle(
-                          fontSize: 45.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      TextSpan(
-                        text:
-                        '\nFood.Specialty.Review',
-                        style: TextStyle(
-                          fontSize: 20,
-                          // height: 0,
-                        ),
-                      ),
-
-                    ],
-                  ),
-                ),
+          applogo(),
+          SizedBox(height: 130), // Adjust the height as needed
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => User()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.transparent,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+                side: BorderSide(color: Colors.white),
               ),
             ),
+            child: Container(
+              width: 200,
+              height: 80,
+              alignment: Alignment.center,
+              child: Text('User', style: TextStyle(fontSize: 20)),
+            ),
           ),
-          Flexible(
-           flex: 1,
-              child: Align(
-                alignment: Alignment.bottomRight,
-
-              child: Row(
-                children: [
-
-                const Expanded(
-                   child: WelcomeButton(
-                  buttonText: 'Sign in',
-                  onTap: SignInScreen(),
-                  color: Colors.transparent,
-                  textColor:  Colors.white ,
+          const SizedBox(height: 16),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Restaurant()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.transparent,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+                side: BorderSide(color: Colors.white),
               ),
-              ),
-                  Expanded(
-                    child: WelcomeButton(
-                      buttonText: 'Sign up',
-                      onTap: const SignUpScreen(),
-                      color: Colors.white,
-                      textColor:  lightColorScheme.primary,
-                    ),
-
-                  ),
-                ],
-              ),
-           ),
-         ),
+            ),
+            child: Container(
+              width: 200,
+              height: 80,
+              alignment: Alignment.center,
+              child: const Text('Restaurant', style: TextStyle(fontSize: 20)),
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
