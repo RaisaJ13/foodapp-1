@@ -15,10 +15,14 @@ final Widget? child;
       body: Stack(
         children: [
           Image.asset(
-            'assets/images/bg1.png',
+            'assets/images/bg3.png',
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
+          ),
+          Image.asset(
+            'assets/images/Checkers.png',
+            width: 40,
           ),
           SafeArea(
             child: child!,
