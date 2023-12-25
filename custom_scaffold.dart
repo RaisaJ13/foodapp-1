@@ -15,7 +15,7 @@ final Widget? child;
       body: Stack(
         children: [
           Image.asset(
-            'assets/images/bg3.png',
+            'assets/images/bg1.png',
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
